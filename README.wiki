@@ -1,0 +1,22 @@
+= KankriJS =
+''Update 2021-01-19: I have stopped using KankriJS myself, which means its development is on hiatus for the time being. I hope to resume development some time in the next few months.''
+
+KankriJS is an unpacked browser extension that replaces profanity in webpages with randomly selected words that start with the same letter as the profanity. Hovering over the new word shows its definition.
+
+''Note: badWords.js is a default list of profane terms (as regexes) to replace, which might be unpleasant or offensive to read.''
+
+== Compatibility and use ==
+KankriJS has only been tested in Chrome-based browsers (specifically Chromium and Vivaldi), but [https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions Firefox uses nearly the same browser extension design], so it might work in Firefox, too. To add it to Chromium, go to <code>chrome://extensions</code> and click "Load unpacked".
+
+== Default replacement words ==
+The 200 default replacement words were randomly selected from a subset of words in the [https://en.wiktionary.org/wiki/Wiktionary:Main_Page English Wiktionary] using a [https://github.com/excarnateSojourner/wiktionary#deepcatfilterpy Python script] in [https://github.com/excarnateSojourner/wiktionary my repository of scripts for processing Wiktionary data]. Specifically, I ran:
+
+<code>py deepCatFilter.py 220320/pages-ns14-title-id.xml 220320/cats-parsed.txt kankri/goodIds.txt -i 'English 1-syllable words' 'English 2-syllable words' 'English 3-syllable words' -e 'English multiword terms' 'English misspellings' 'English shortenings' 'English morphemes' 'English adverbs' 'English proper nouns' 'English letters' 'English archaic terms' 'English obsolete terms' 'English non-lemma forms' 'English derogatory terms' 'English offensive terms' 'English vulgarities' -v</code>
+
+== Default profanity ==
+I have compiled a default profanity list just by listing some terms off the top of my head, adding those that I come across in the wild, and adding a few related to [https://en.wikipedia.org/wiki/COVID-19_pandemic recent events] (because I am sick of reading / hearing them). There are probably many terms I have not thought to add. I have purposefully omitted from the list words that are commonly used in both profane and nonprofane ways (so these words are not replaced).
+
+I have tried to leave the suffixes (like 's', 'ing', 'ed') of profane terms in place so that they become suffixes of the replacement words. I find this makes it easier to read replaced words, because they can be read as plurals even if they are not nouns, or as verb tenses even if they are not verbs.
+
+== Name ==
+KankriJS is named after [https://mspaintadventures.fandom.com/wiki/Kankri_Vantas Kankri Vantas], a character in [https://www.homestuck.com/ Homestuck], a web comic.

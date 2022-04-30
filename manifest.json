@@ -1,0 +1,18 @@
+{
+	"manifest_version": 3,
+	"name": "kankri",
+	"version": "1.0",
+
+	"description": "Replaces profanity and other 'bad' words with random English words.",
+
+	"author": "garetethan",
+	"content_scripts": [
+		{
+			"matches": ["https://*/*", "http://*/*"],
+			"all_frames": true,
+			"css": ["main.css"],
+			"js": ["badWords.js", "goodWords.js", "main.js"]
+		}
+	],
+	"homepage_url": "https://excarnatesojourner.github.io/kankri.html"
+}
