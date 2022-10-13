@@ -13,7 +13,7 @@ IRSA = ['alfa', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel',
 POS_HEADINGS = {'Adjective', 'Interjection', 'Noun', 'Preposition', 'Pronoun', 'Verb'}
 
 def main():
-	parser = argparse.ArgumentParser()
+	parser = argparse.ArgumentParser(description='Given a list of good word candidates, randomly choose some for each letter of the alphabet, and collect information related to them.')
 	parser.add_argument('pages_path', help='The XML file from Wiktionary containing words and definitions (among other things).')
 	parser.add_argument('ids_path', help='A text file containing, on each line, the ID of a candidate page.')
 	parser.add_argument('output_path', help='The JS file to write to.')
