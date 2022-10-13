@@ -1,6 +1,4 @@
 = KankriJS =
-''Update 2021-01-19: I have stopped using KankriJS myself, which means its development is on hiatus for the time being. I hope to resume development some time in the next few months.''
-
 KankriJS is an unpacked browser extension that replaces profanity in webpages with randomly selected words that start with the same letter as the profanity. Hovering over the new word shows its definition.
 
 ''Note: badWords.js is a default list of profane terms (as regexes) to replace, which might be unpleasant or offensive to read.''
